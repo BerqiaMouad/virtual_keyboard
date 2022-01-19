@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awsome Virtual Keyboard</title>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/keyboard.css">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <h3 class="logo">Online<span>Keyboard</span></h3>
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <ul class="nav-list">
+        <li class="link">home</li>
+        <li class="link">keyboard</li>
+        <li class="link">about</li>
+    </ul>
+
+    <header class="page-container">
+        <span class="overlay"></span>
+        <section class="page home active">
+            <div class="homeContainer">
+                <h2>Virtual keyboard</h2>
+                <p>A fancy virtual keyboard using html/css/javascript</p>
+                <button class="btn">Try it now!</button>
+            </div>
+        </section>
+        <section class="page keyboard">
+            <div class="keyboardContainer">
+                <div class="keyboard_wrapper">
+                    <pre class="display"></pre>
+            
+                    <div class="key">
+                        <div class="row">
+                            <span data-key="q">q</span>
+                            <span data-key="w">w</span>
+                            <span data-key="e">e</span>
+                            <span data-key="r">r</span>
+                            <span data-key="t">t</span>
+                            <span data-key="y">y</span>
+                            <span data-key="u">u</span>
+                            <span data-key="i">i</span>
+                            <span data-key="o">o</span>
+                            <span data-key="p">p</span>
+                        </div>
+            
+                        <div class="row">
+                            <span data-key="a">a</span>
+                            <span data-key="s">s</span>
+                            <span data-key="d">d</span>
+                            <span data-key="f">f</span>
+                            <span data-key="g">g</span>
+                            <span data-key="h">h</span>
+                            <span data-key="j">j</span>
+                            <span data-key="k">k</span>
+                            <span data-key="l">l</span>
+                        </div>
+            
+                        <div class="row">
+                            <span class="caps">caps</span>
+                            <span data-key="z">z</span>
+                            <span data-key="x">x</span>
+                            <span data-key="c">c</span>
+                            <span data-key="v">v</span>
+                            <span data-key="b">b</span>
+                            <span data-key="n">n</span>
+                            <span data-key="m">m</span>
+                            <span data-key="del" class="backspace">del</span>
+                        </div>
+            
+                        <div class="row">
+                            <span class="space" data-key=" ">
+                                Space
+                            </span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page about">
+            <div class="aboutContainer">
+                <h2>About <span>The Developer</span></h2>
+                <p>Hy there, it's <a href="https://github.com/BerqiaMouad" target="_blank">Mouad Berqia</a>, the developer of this website.</br>
+                    I tried to implement most of the animations in the website without using any frameworks.</br>
+                    The website is a simple virtual keyboard. To learn more anout me click on the button below.
+                </p>
+                <button class="btn"><a href="https://berqiamouad.netlify.app/" target="_blank">Learn more!</a></button>
+            </div>
+        </section>
+    </header>
+    
+    <script src="/js/navbar.js"></script>
+    <script src="/js/keyboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+.keyboard_wrapper {
+    color: antiquewhite;
+    width: 700px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow:
+        -4px -4px 8px #fff,
+        4px 4px 8px #0002;
+}
+
+.keyboard_wrapper .display {
+    color: antiquewhite;
+    position: relative;
+    font-size: 18px;
+    font-family: inherit;
+    height: 100px;
+    border-radius: 15px;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 2px inset #fff;
+    white-space: pre-wrap;
+    box-shadow:
+        inset 2px 2px 5px #0002,
+        inset -2px -2px 5px #fff;
+}
+
+.keyboard_wrapper .display::before {
+    color: antiquewhite;
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(45deg, rgb(109, 109, 109), #0000001a);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.keyboard_wrapper .key {
+    color: antiquewhite;
+    margin-top: 20px;
+    text-transform: lowercase;
+    user-select: none;
+}
+
+.keyboard_wrapper .key .row {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.keyboard_wrapper .key .row span {
+    color: antiquewhite;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-content: center;
+    border-radius: 8px;
+    box-shadow:
+        3px 3px 6px #0002,
+        -3px -3px 6px #fff;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.keyboard_wrapper .key .row span.caps,
+.keyboard_wrapper .key .row span.backspace {
+    color: antiquewhite;
+    width: calc(50px * 1.6);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.keyboard_wrapper .key .row span.space {
+    width: calc(50px * 9.4);
+}
+
+
+
+
+.keyboard_wrapper .key .row span.active,
+.keyboard_wrapper .key .row span:hover {
+    border-color: white;
+    color: antiquewhite;
+}
+
+.keyboard_wrapper .key .row span.active,
+.keyboard_wrapper .key .row span:active {
+    color: antiquewhite;
+    box-shadow:
+        inset 3px 3px 6px #0002,
+        inset -3px -3px 6px #fff;
+}
+
+.keyboard_wrapper .key.uppercase {
+    text-transform: capitalize;
+    color: white;
+}
