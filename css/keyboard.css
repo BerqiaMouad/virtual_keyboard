@@ -1,255 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1000px;
-    overflow: hidden;
-    position: relative;
-    background: #212121;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.navbar{
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 0 10vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 9;
-}
-
-.brand{
-    font-weight: 500;
-    color: #FFF;
-    text-transform: capitalize;
-    font-size: 25px;
-    letter-spacing: 2px;
-}
-.logo{
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 4rem;
-
-}
-
-.logo span{
-    font-weight: 300;
+.keyboard_wrapper {
     color: antiquewhite;
+    width: 700px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow:
+        -4px -4px 8px #fff,
+        4px 4px 8px #0002;
 }
 
-.toggle-btn{
+.keyboard_wrapper .display {
+    color: antiquewhite;
     position: relative;
+    font-size: 18px;
+    font-family: inherit;
+    height: 100px;
+    border-radius: 15px;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 2px inset #fff;
+    white-space: pre-wrap;
+    box-shadow:
+        inset 2px 2px 5px #0002,
+        inset -2px -2px 5px #fff;
+}
+
+.keyboard_wrapper .display::before {
+    color: antiquewhite;
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.keyboard_wrapper .key {
+    color: antiquewhite;
+    margin-top: 20px;
+    text-transform: lowercase;
+    user-select: none;
+}
+
+.keyboard_wrapper .key .row {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.keyboard_wrapper .key .row span {
+    color: antiquewhite;
     width: 50px;
     height: 50px;
+    display: grid;
+    place-content: center;
+    border-radius: 8px;
+    box-shadow:
+        3px 3px 6px #0002,
+        -3px -3px 6px #fff;
     cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.3s;
 }
 
-.toggle-btn span{
-    position: absolute;
-    top: 25%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 3px;
-    background: #FFF;
-    transition: 1s;
-}
-
-.toggle-btn span:nth-child(2){
-    top: 50%;
-    width: 70%;
-}
-
-.toggle-btn span:nth-child(3){
-    top: 75%;
-    width: 40%;
-}
-
-.toggle-btn.active span:nth-child(2){
-    display: none;
-}
-
-.toggle-btn.active span:nth-child(1){
-    transform: rotate(45deg);
-    top: 50%
-}
-
-.toggle-btn.active span:nth-child(3){
-    transform: rotate(-45deg);
-    top: 50%;
-    width: 100%;
-}
-
-.page-container{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    -webkit-box-reflect: below 20px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
-    transition: 0.5s;
-    left: 0;
-}
-
-.overlay{
-    position: fixed;
-    bottom: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: #212121;
-    z-index: 3;
-}
-
-.page{
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.keyboard_wrapper .key .row span.caps,
+.keyboard_wrapper .key .row span.backspace {
+    color: antiquewhite;
+    width: calc(50px * 1.6);
     display: flex;
-    justify-content: center;
+    gap: 5px;
     align-items: center;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0;
 }
 
-.page.active{
-    opacity: 1;
-    pointer-events: all;
+.keyboard_wrapper .key .row span.space {
+    color: antiquewhite;
+    width: calc(50px * 9.4);
 }
 
-.page.home{
-    background-image: url(/images/bg.jpg);
-    background-size: cover;
-}
-.page.home .homeContainer{
-    max-width: 35rem;
-    text-align: center;
-    color:antiquewhite;
-    padding: 0 2rem;
-}
-.btn{
-    margin-top: 1rem;
-    padding: 0.6rem 1.8rem;
-    background-color: antiquewhite;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.5s;
 
-}
-.btn:hover{
-    background-color: gray;
-}
-.btn a{
-    text-decoration: none;
-    color: grey;
-    text-transform: uppercase;
-    transition: 0.5s;
-}
-.btn:hover a{
+
+
+.keyboard_wrapper .key .row span.active,
+.keyboard_wrapper .key .row span:hover {
+    border-color: white;
     color: antiquewhite;
 }
 
-
-.page.keyboard{
-    background-image: url(/images/bg.jpg);
-    background-size: cover;
+.keyboard_wrapper .key .row span.active,
+.keyboard_wrapper .key .row span:active {
+    color: antiquewhite;
+    box-shadow:
+        inset 3px 3px 6px #0002,
+        inset -3px -3px 6px #fff;
 }
 
-.page.about{
-    background-image: url(/images/bg.jpg);
-    background-size: cover;
-}
-
-.page .title{
-    font-size: 100px;
-    color: #FFF;
-    text-transform: uppercase;
-    -webkit-text-stroke: 2px #000;
-    font-weight: 700;
-}
-
-.page-container.active{
-    left: -10%;
-    transform: rotateY(45deg) scale(0.5);
-}
-
-.nav-list{
-    position: absolute;
-    top: 50%;
-    right: 10vw;
-    transform: translateY(-50%);
-    transition: 0.5s;
-    opacity: 0;
-}
-
-.link{
-    position: relative;
-    color: #fff;
+.keyboard_wrapper .key.uppercase {
     text-transform: capitalize;
-    font-size: 20px;
-    padding: 10px;
-    transition: .5s;
-    letter-spacing: 2px;
-    list-style: none;
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.link:hover{
-    opacity: 0.8;
-    color: antiquewhite;
-    transform: translateX(-20px);
-}
-
-.nav-list.show{
-    opacity: 1;
-}
-
-@keyframes slide{
-    100%{
-        left: 100%;
-    }
-}
-
-.aboutContainer h2{
-    color: black;
-    margin-bottom: 20px;
-}
-.aboutContainer h2 span{
-    color: antiquewhite;
-}
-.aboutContainer p{
-    color: #fff;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-.aboutContainer p a{
-    text-decoration: none;
-    color: black;
-    margin-top: 1rem;
-    padding: 5px 5px;
-    background-color: antiquewhite;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-.aboutContainer p a:hover{
-    color: antiquewhite;
-    background-color: gray;
+    color: white;
 }
